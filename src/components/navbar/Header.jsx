@@ -21,6 +21,10 @@ const HeaderContainer = styled(Box)(({ theme }) => ({
   alignItems: "center",
   color: "white",
   background: theme.palette.primary.main,
+
+  [theme.breakpoints.down("laptop")]: {
+    height: "170px",
+  },
 }));
 
 const HeaderHeroContainer = styled("div")(({ theme }) => ({
@@ -63,7 +67,8 @@ const SearchBox = styled(Box)(({ theme }) => ({
   bottom: "-25px",
   height: "50px",
   alignItems: "center",
-  border: "3px solid #febb02",
+  border: "5px solid #febb02",
+  borderRadius: "5px",
   maxWidth: "1024px",
   width: "100%",
   backgroundColor: "white",
@@ -73,7 +78,7 @@ const SearchBoxItem = styled(Box)`
   display: flex;
   height: 100%;
   font-size: 14px;
-  border-right: 3px solid #febb02;
+  border-right: 5px solid #febb02;
   align-items: center;
   color: grey;
   padding: 10px 20px;
@@ -84,6 +89,7 @@ const SearchInput = styled("input")`
   outline: none;
   border: none;
   width: 100%;
+  height: 100%;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
 `;
@@ -139,6 +145,40 @@ const OptionButton = styled(Button)({
   border: "1px solid blue",
 });
 
+const MediaQuerySearchContainer = styled(Container)(({ theme }) => ({
+  height: "200px",
+  position: "absolute",
+  top: "20px",
+  [theme.breakpoints.up("laptop")]: {
+    display: "none",
+  },
+}));
+
+const MediaQuerySearchBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  border: "5px solid #febb02",
+  background: "white",
+  borderRadius: "5px",
+  height: "100%",
+  width: "100%",
+}));
+
+const MediaQuerySearchBoxItem = styled(Box)({
+  display: "flex",
+  height: "50px",
+  fontSize: "14px",
+  width: "100%",
+  borderBottom: "5px solid #febb02",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  color: "grey",
+  padding: "10px 20px",
+  gap: "10px",
+});
+
+// COMPONENT
 const Header = () => {
   const [showCalender, setShowCalender] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
@@ -281,6 +321,35 @@ const Header = () => {
           </SearchBox>
         </HeaderHeroContainer>
       </Container>
+
+      {/* TODO Export this component in a different file */}
+      <MediaQuerySearchContainer>
+        <MediaQuerySearchBox>
+          <MediaQuerySearchBoxItem>
+            <IoBed />
+            <SearchInput placeholder="Where are you going to" type={"text"} />
+          </MediaQuerySearchBoxItem>
+
+          <MediaQuerySearchBoxItem>
+            <GoCalendar />
+            <Box onClick={() => setShowCalender((state) => !state)}>
+              {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+                date[0].endDate,
+                "MM/dd/yyyy"
+              )}`}
+            </Box>
+          </MediaQuerySearchBoxItem>
+
+          <MediaQuerySearchBoxItem>
+            <ImUser />
+            <Box onClick={() => setShowOptions((state) => !state)}>
+              {options.adults} Adults - {options.children} Children -{" "}
+              {options.rooms} Rooms
+            </Box>
+          </MediaQuerySearchBoxItem>
+          <SearchButton>Search</SearchButton>
+        </MediaQuerySearchBox>
+      </MediaQuerySearchContainer>
     </HeaderContainer>
   );
 };
