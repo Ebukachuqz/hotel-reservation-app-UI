@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, CssBaseline, styled } from "@mui/material";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Hotel from "./pages/hotel/Hotel";
+import HotelList from "./pages/hotelList/HotelList";
 
-function App() {
+const Container = styled(Box)`
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <Container>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/hotels" element={<HotelList />} />
+            <Route path="/hotel/:id" element={<Hotel />} />
+          </Routes>
+        </BrowserRouter>
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
