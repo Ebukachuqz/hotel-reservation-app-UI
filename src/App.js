@@ -1,9 +1,11 @@
 import { Box, CssBaseline, styled } from "@mui/material";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+// Route components import
 import Home from "./pages/home/Home";
 import Hotel from "./pages/hotel/Hotel";
-import HotelList from "./pages/hotelList/HotelList";
+import HotelsResult from "./pages/hotelsResult/HotelsResult";
 
 const Container = styled(Box)`
   width: 100%;
@@ -18,7 +20,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/hotels" element={<HotelList />} />
+            <Route path="/hotels" element={<HotelsResult />} />
             <Route path="/hotel/:id" element={<Hotel />} />
           </Routes>
         </BrowserRouter>
