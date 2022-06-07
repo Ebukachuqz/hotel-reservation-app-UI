@@ -9,7 +9,6 @@ import Navbar from "../../components/navbar/Navbar";
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Header />
       <Container sx={{ margin: "60px auto 0px" }} maxWidth="desktop">
         <Alert variant="outlined" severity="info">
