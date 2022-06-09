@@ -6,6 +6,7 @@ const theme = createTheme({
       mobile: 0,
       tablet: 481,
       laptop: 769,
+      laptoplg: 960,
       desktop: 1025,
       tv: 1201,
     },

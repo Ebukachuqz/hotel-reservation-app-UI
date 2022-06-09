@@ -2,7 +2,6 @@ import { Box, Container, Typography, styled, Checkbox } from "@mui/material";
 import React from "react";
 import SearchButton from "../SearchButton";
 import { BiCopyright } from "react-icons/bi";
-import { NavLink, Router } from "react-router-dom";
 
 const flexStyle = {
   display: "flex",
@@ -10,11 +9,36 @@ const flexStyle = {
   alignItems: "center",
 };
 
+const EmailBox = styled(Box)(({ theme }) => ({
+  ...flexStyle,
+  marginTop: "20px",
+
+  [theme.breakpoints.down("laptop")]: {
+    flexDirection: "column",
+    gap: "10px",
+  },
+}));
 const EmailInput = styled("input")({
   width: "355px",
   height: "48px",
   padding: "10px",
 });
+
+const FooterLinksCOntainer = styled(Container)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid white;
+  padding: 10px 0;
+  gap: 10px;
+  color: white;
+  font-size: 14px;
+  background: #003580;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
 const FooterLink = styled("a")({
   color: "white",
 });
@@ -33,7 +57,7 @@ const Footer = () => {
             Sign up and we'll send the best deals to you
           </Typography>
         </Box>
-        <Box sx={{ ...flexStyle, marginTop: "20px" }}>
+        <EmailBox>
           <EmailInput />
           <SearchButton
             sx={{
@@ -47,7 +71,7 @@ const Footer = () => {
           >
             Subscribe
           </SearchButton>
-        </Box>
+        </EmailBox>
         <Box sx={{ marginBottom: "60px" }}>
           <Checkbox {...label} color="secondary" />
           Send me a link to get the FREE Booking.com app!
@@ -59,25 +83,12 @@ const Footer = () => {
         <BiCopyright style={{ margin: "0 5px" }} />
         Created By Ebuka Chuqz
       </Container>
-      <Container
-        sx={{
-          ...flexStyle,
-          borderTop: "1px solid white",
-          padding: "10px 0",
-          gap: "10px",
-          color: "white",
-          fontSize: "14px",
-          background: "#003580",
-        }}
-      >
+      <FooterLinksCOntainer>
         <FooterLink href="#">Mobile version</FooterLink>
         <FooterLink href="#">Your account</FooterLink>
-        <FooterLink href="#">Your account</FooterLink>
-        <FooterLink href="#">Make changes to your booking online</FooterLink>
         <FooterLink href="#">Customer Service help</FooterLink>
         <FooterLink href="#">Become an affiliate</FooterLink>
-        <FooterLink href="#">Booking.com for Business</FooterLink>
-      </Container>
+      </FooterLinksCOntainer>
     </Box>
   );
 };

@@ -10,7 +10,7 @@ const HotelHeader = styled(Box)({
   width: "100%",
 });
 
-const CardBox = styled(Box)({
+const CardBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -19,7 +19,17 @@ const CardBox = styled(Box)({
   gap: "15px",
   flex: "1",
   borderRadius: "5px",
-});
+}));
+
+const DetailsBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  marginTop: "50px",
+
+  [theme.breakpoints.down("laptop")]: {
+    flexDirection: "column",
+  },
+}));
 const Hotel = () => {
   return (
     <>
@@ -50,13 +60,7 @@ const Hotel = () => {
           </SearchButton>
         </HotelHeader>
         <ImageListContainer />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "50px",
-          }}
-        >
+        <DetailsBox>
           <Box
             sx={{
               display: "flex",
@@ -100,7 +104,7 @@ const Hotel = () => {
             </Typography>
             <SearchButton>Reserve or Book Now!</SearchButton>
           </CardBox>
-        </Box>
+        </DetailsBox>
       </Container>
     </>
   );

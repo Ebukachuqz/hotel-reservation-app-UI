@@ -1,9 +1,7 @@
 import { Box, styled, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
-import { ImUser } from "react-icons/im";
+import React from "react";
 import { useGlobalContext } from "../context";
 import DateContainer from "./DateContainer";
-import OptionsBox from "./OptionsBox";
 import SearchButton from "./SearchButton";
 import SearchInput from "./SearchInput";
 
@@ -16,6 +14,7 @@ const Container = styled(Box)({
   position: "sticky",
   top: "10px",
   height: "max-content",
+  marginBottom: "20px",
 });
 
 const DetailsContainer = styled(Box)({

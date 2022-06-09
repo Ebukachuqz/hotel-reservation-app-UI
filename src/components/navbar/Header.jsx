@@ -1,32 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Material UI imports
-import {
-  Box,
-  Button,
-  Container,
-  Modal,
-  styled,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Container, styled, Typography } from "@mui/material";
 
-// React Icons Imports
-import { IoBed } from "react-icons/io5";
+// React Icons Import
 import { ImUser } from "react-icons/im";
-import { GoCalendar } from "react-icons/go";
 
-// React date range imports
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRange } from "react-date-range";
-import { format } from "date-fns";
 import SearchInput from "../SearchInput";
 import { useGlobalContext } from "../../context";
 import OptionsBox from "../OptionsBox";
-import CalenderContainer from "../CalenderContainer";
 import HeaderMediaQueryContainer from "../HeaderMediaQueryContainer";
 import SearchButton from "../SearchButton";
-import ModalCalender from "../ModalCalender";
 import DateContainer from "../DateContainer";
 
 const HeaderContainer = styled(Box)(({ theme }) => ({
@@ -100,20 +84,10 @@ const SearchBoxItem = styled(Box)`
   gap: 10px;
 `;
 
-const DateRangeBox = styled(Box)({
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  boxShadow: 24,
-  p: 4,
-});
-
 // COMPONENT
 const Header = () => {
   const {
-    searchDetails: { date, options },
-    handleOpenModalCalender,
+    searchDetails: { options },
     showOptions,
     setShowOptions,
   } = useGlobalContext();

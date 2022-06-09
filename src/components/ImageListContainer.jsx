@@ -15,7 +15,6 @@ const ImageListContainer = () => {
             src={`${item.img}?w=100%&h=100%&fit=crop&auto=format`}
             srcSet={`${item.img}?w=100%&h=100%&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
-            loading="lazy"
           />
         </ImageListItem>
       ))}

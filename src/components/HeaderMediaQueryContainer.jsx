@@ -1,12 +1,8 @@
 import { Box, Container, styled } from "@mui/material";
-import { format } from "date-fns";
-import React, { useState } from "react";
-import { GoCalendar } from "react-icons/go";
+import React from "react";
 import { ImUser } from "react-icons/im";
-import { IoBed } from "react-icons/io5";
 import { useGlobalContext } from "../context";
 import DateContainer from "./DateContainer";
-import ModalCalender from "./ModalCalender";
 import OptionsBox from "./OptionsBox";
 import SearchButton from "./SearchButton";
 import SearchInput from "./SearchInput";

@@ -43,12 +43,12 @@ const ResultCard = () => {
   return (
     <MainContainer elevation={3}>
       <Grid container>
-        <Grid item laptop={3}>
+        <Grid item tablet={3}>
           <Img src="https://t-cf.bstatic.com/xdata/images/hotel/square200/340210867.webp?k=30fe5986a5a3d579470868233a9fa3d84db056c192510bf491dc0bfb634f1feb&o=&s=1" />
         </Grid>
         <Grid
           item
-          laptop={6}
+          tablet={6}
           sx={{
             width: "100%",
             display: "flex",
@@ -97,7 +97,7 @@ const ResultCard = () => {
             You can cancel later, so lock this great price
           </Typography>
         </Grid>
-        <Grid item laptop={3}>
+        <Grid item tablet={3}>
           <Container
             sx={{
               width: "100%",

@@ -9,10 +9,10 @@ const HotelsResult = () => {
     <>
       <Container maxWidth="desktop" sx={{ marginTop: "30px" }}>
         <Grid container gap={0}>
-          <Grid item mobile={12} laptop={3.5}>
+          <Grid item mobile={12} laptoplg={3.5}>
             <ResultsSearchBox />
           </Grid>
-          <Grid item mobile={12} laptop={8.5}>
+          <Grid item mobile={12} laptoplg={8.5}>
             <ResultsListContainer />
           </Grid>
         </Grid>
