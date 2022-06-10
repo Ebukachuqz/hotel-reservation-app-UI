@@ -90,6 +90,7 @@ const Header = () => {
     searchDetails: { options },
     showOptions,
     setShowOptions,
+    handleSearch,
   } = useGlobalContext();
 
   return (
@@ -126,7 +127,7 @@ const Header = () => {
               {showOptions && <OptionsBox />}
             </SearchBoxItem>
 
-            <SearchButton>Search</SearchButton>
+            <SearchButton onClick={handleSearch}>Search</SearchButton>
           </SearchBox>
         </HeaderHeroContainer>
       </Container>

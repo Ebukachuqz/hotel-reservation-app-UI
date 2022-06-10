@@ -51,6 +51,7 @@ const HeaderMediaQueryContainer = () => {
     searchDetails: { options },
     showOptions,
     setShowOptions,
+    handleSearch,
   } = useGlobalContext();
   return (
     <MediaQuerySearchContainer>
@@ -78,7 +79,7 @@ const HeaderMediaQueryContainer = () => {
             </OptionBox>
           )}
         </MediaQuerySearchBoxItem>
-        <SearchButton>Search</SearchButton>
+        <SearchButton onClick={handleSearch}>Search</SearchButton>
       </MediaQuerySearchBox>
     </MediaQuerySearchContainer>
   );

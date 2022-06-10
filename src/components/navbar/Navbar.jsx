@@ -16,6 +16,7 @@ import {
 } from "react-icons/io5";
 import { MdOutlineAttractions } from "react-icons/md";
 import { RiTaxiWifiLine } from "react-icons/ri";
+import { useGlobalContext } from "../../context";
 
 const NavButton = styled(Button)({
   boxShadow: "none",
@@ -69,12 +70,17 @@ const HeaderButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const { goHome } = useGlobalContext();
   return (
     <div>
       <AppBar position="static" elevation={0} color="primary">
         <Container maxWidth="desktop">
           <Toolbar sx={{ justifyContent: "space-between", padding: "0" }}>
-            <Typography fontWeight={900} variant="h5">
+            <Typography
+              onClick={goHome}
+              sx={{ cursor: "pointer", fontWeight: "900" }}
+              variant="h5"
+            >
               Booking.com
             </Typography>
 

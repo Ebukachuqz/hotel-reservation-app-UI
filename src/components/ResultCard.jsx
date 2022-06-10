@@ -1,6 +1,7 @@
 import * as React from "react";
 import { styled, Box, Grid, Container, Typography, Paper } from "@mui/material";
 import SearchButton from "./SearchButton";
+import { useGlobalContext } from "../context";
 
 const Img = styled("img")({
   margin: "auto",
@@ -40,6 +41,7 @@ const Rating = styled(Box)({
 });
 
 const ResultCard = () => {
+  const { handlehotelAvailability } = useGlobalContext();
   return (
     <MainContainer elevation={3}>
       <Grid container>
@@ -126,6 +128,7 @@ const ResultCard = () => {
                   padding: "10px 5px",
                   borderRadius: "5px",
                 }}
+                onClick={handlehotelAvailability}
               >
                 See availability
               </SearchButton>
